@@ -3,11 +3,12 @@ services:
     container_name: ms_pg_sql
     image: postgres
     environment:
-      POSTGRES_USER: user
-      POSTGRES_PASSWORD: user
-      PGDATA: /var/lib/postgresql/data"
+      - POSTGRES_DB=product
+      - POSTGRES_USER=user
+      - POSTGRES_PASSWORD=user
+      - PGDATA=/var/lib/postgresql/data
     volumes:
-      - postgres:/var/lib/postgresql/data"
+      - postgres:/var/lib/postgresql/data
     ports:
       - 5432:5432
     networks:
@@ -53,8 +54,7 @@ services:
       - ME_CONFIG_MONGODB_ADMINPASSWORD=user
       - ME_CONFIG_MONGODB_SERVER=mongodb
     depends_on:
-      - mongodb   
-
+      - mongodb
 
   mail-dev:
     container_name: ms_mail_dev
