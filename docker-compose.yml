@@ -3,9 +3,9 @@ services:
     container_name: ms_pg_sql
     image: postgres
     environment:
-      - POSTGRES_DB=${POSTGRES_DB}
-      - POSTGRES_USER=${POSTGRES_USER}
-      - POSTGRES_PASSWORD=${POSTGRES_PASSWORD}
+      - POSTGRES_DB=product
+      - POSTGRES_USER=user
+      - POSTGRES_PASSWORD=user
       - PGDATA=/var/lib/postgresql/data
     volumes:
       - postgres:/var/lib/postgresql/data
